@@ -2560,5 +2560,35 @@ answer4 = PageContent[356]
 
 del PageContent, i, text, url
 
-#%%
+#%% Question 5
+
+import pickle
+import urllib
+
+file = pickle.load(open('/Users/achuth/Documents/ThePythonChallenge/banner.p', 'rb'))
+
+final_pattern = []
+
+for i in range(0, file.__len__()):
+    final_pattern.append("\n")
+    pattern = []
+    for j in range(0, file[i].__len__()):
+        for k in range(0, file[i][j][1]):
+            #print(file[i][j][0])
+            pattern.append(file[i][j][0])
+    final_pattern.append("".join(pattern))
+    
+outputFile = open('/Users/achuth/Documents/ThePythonChallenge/answer5.p', 'w')
+
+for line in final_pattern:
+    outputFile.write(line)
+    
+outputFile.close()
+
+answer5 = "channel"
+
+#%% Question 6
+
+
+
 
